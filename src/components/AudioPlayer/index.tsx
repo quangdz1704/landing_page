@@ -2,7 +2,13 @@
 import { useEffect, useRef, useState } from "react";
 import biw from "../../assets/biw.mp3";
 
-const Audio = ({ readyPlay }: { readyPlay?: boolean }) => {
+const Audio = ({
+  readyPlay,
+  controls,
+}: {
+  readyPlay?: boolean;
+  controls?: boolean;
+}) => {
   const audioPlayer = useRef<any>();
   const [isPlaying, setIsPlaying] = useState(!!readyPlay);
 
@@ -31,13 +37,22 @@ const Audio = ({ readyPlay }: { readyPlay?: boolean }) => {
     if (readyPlay) {
       audioPlayer.current.play();
     } else {
+      // audioPlayer.current.pause();
+      audioPlayer.current.currentTime = 0;
+      // audioPlayer.current.load();
       audioPlayer.current.pause();
     }
   }, [readyPlay]);
 
   return (
     <div>
-      <audio ref={audioPlayer} autoPlay controls loop id="backgroundMusic">
+      <audio
+        ref={audioPlayer}
+        autoPlay
+        controls={controls}
+        loop
+        id="backgroundMusic"
+      >
         <source src={biw} />
       </audio>
     </div>
