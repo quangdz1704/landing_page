@@ -46,23 +46,3 @@
   background-color: rgba(252, 231, 243, var(--un-bg-opacity));
   border: 1px solid pink;
 }
-
-/* SWIPER */
-
-.swiper {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 300px;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-}

@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { Theme, ToastContainer, Id as ToastId, toast } from "react-toastify";
+import "react-toastify/ReactToastify.min.css";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./App.css";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import Audio from "./components/AudioPlayer";
 import BannerSwiper from "./components/Banner";
 import { THEME_CONFIG } from "./constants";
-import "react-toastify/ReactToastify.min.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
-
-import "./App.css";
+import ParticlesCanvas from "./components/Particles";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -89,11 +89,11 @@ function App() {
   useEffect(() => {
     // do something...
 
-    return () => {
-      setReadyPlayAudio(false);
-      removeToast();
-      showToast();
-    };
+    // return () => {
+    setReadyPlayAudio(false);
+    removeToast();
+    showToast();
+    // };
   }, []);
 
   return (
@@ -136,7 +136,7 @@ function App() {
         closeButton={false}
       />
       <Audio readyPlay={readyPlayAudio} />
-      {/* <ParticlesCanvas /> */}
+      <ParticlesCanvas />
     </div>
   );
 }
