@@ -1,6 +1,6 @@
 // import AudioPlayer from "react-audio-player";
-import biw from "../../assets/biw.mp3";
 import { useEffect, useRef, useState } from "react";
+import biw from "../../assets/biw.mp3";
 
 const Audio = ({ readyPlay }: { readyPlay?: boolean }) => {
   const audioPlayer = useRef<any>();
